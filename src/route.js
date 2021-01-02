@@ -22,8 +22,6 @@ const LogoutRoute = () => {
     </BrowserRouter>);
 };
 
-
-
 const Routes = () => {
     const IS_LOGIN = gql`
     {
@@ -35,7 +33,7 @@ const Routes = () => {
         data:{isLogin},
     } = useQuery(IS_LOGIN);
 
-    return isLogin ? <LoginRoute/> : <LogoutRoute/>;
+    return true ? <LoginRoute/> : <LogoutRoute/>;
 };
 
 // 라우터에 여러 페이지를 만들어서 -> App에 임포트 시키고 -> index에서 가상돔에 넣어준다
