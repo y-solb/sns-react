@@ -4,7 +4,6 @@ import JoinForm from "../../components/auth/JoinForm";
 //import { Box, Button, Input, Wrapper} from "../../styles/styles";
 import { JOIN_ACTION, LOGIN_ACTION } from "./AuthContainer";
 
-
 /*Presenter는 View만 보여주는 단임 */
 
 export interface IProps {
@@ -52,6 +51,5 @@ const AuthPresenter: React.FC<IProps> = (props) => {
         </Fragment>
     );
 };
-
 
 export default AuthPresenter;
