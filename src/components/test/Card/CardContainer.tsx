@@ -5,7 +5,7 @@ const CardContainer = () => {
     const [fill, setFill] = useState(false);
 
     const [text, setText] = useState("");
-    const [comments, setComments] = useState([]);//괄호 안 초기상태 빈 배열
+    const [comments, setComments] = useState([]); //괄호 안 초기상태 빈 배열
 
     const toggleLike = () => {
         console.log(fill);
@@ -32,6 +32,7 @@ const CardContainer = () => {
             handleText={handleText}
             text={text}
             onSubmit={onSubmit} 
+            comments={comments}
         />
     );
 }

@@ -14,6 +14,8 @@ interface ICard {
     handleText: (args: string) => void;
     text: string;
     onSubmit: () => void;
+    comments: string[];
+
 }
 
 const CardPresenter = (props: ICard) => {
@@ -50,6 +52,8 @@ const CardPresenter = (props: ICard) => {
                 </Box>
             </Box>
             <Box>
+
+
                 <form 
                     onSubmit = {(e) => {
                         e.preventDefault(); //새로고침 방지
@@ -60,10 +64,26 @@ const CardPresenter = (props: ICard) => {
                         value={props.text} 
                         onChange={(e)=> props.handleText(e.target.value)} 
                     />
+                    
                 </form>
+                <Box>
+                    {props.comments.map((element) => (
+                         
+                          <ul>{element}</ul>
+                         
+                    ))}
+                </Box>
             </Box>
         </MuiPaper>
     );
 };
 //comments.map하면 댓글이 다 달린다?
 export default CardPresenter;
+
+ {/* map 함수 => for이랑 같은 반복문 배열의 length만큼 반복해주는 함수 */}
+                 {/*   {img.map((element,index) => { //element는 객체 하나 하나
+                        if(index < props.count) {
+                            return <ImgBox src={element.src} alt="" />;
+                        }
+                    })}
+                */}
